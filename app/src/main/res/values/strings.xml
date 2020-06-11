@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Looper</string>
+
+    <string name="test1_button_label">Test1</string>
+    <string name="test2_button_label">Test2</string>
+    <string name="description_text">Press buttons and see\nwhat happens in Logcat</string>
 </resources>
