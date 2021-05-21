@@ -31,12 +31,7 @@ public class MainActivity extends AppCompatActivity {
         HandlerThread th = new HandlerThread("HandlerThread1");
         th.start();
         Handler handler = new Handler(th.getLooper());
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                Log.d(TAG, "looperTest1: posted task in thread=" + Thread.currentThread());
-            }
-        });
+        handler.post(() -> Log.d(TAG, "looperTest1: posted in thread=" + Thread.currentThread()));
     }
 
     private void looperTest2() {
@@ -44,12 +39,7 @@ public class MainActivity extends AppCompatActivity {
         MyHandlerThread th = new MyHandlerThread("HandlerThread2");
         th.start();
         Handler handler = new Handler(th.getLooper());
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                Log.d(TAG, "looperTest2: posted task in thread=" + Thread.currentThread());
-            }
-        });
+        handler.post(() -> Log.d(TAG, "looperTest2: posted in thread=" + Thread.currentThread()));
     }
 
     private static class MyHandlerThread extends Thread {
